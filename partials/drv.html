@@ -1,0 +1,54 @@
+<div class="container player-info">
+	<div class="col-md-3 drv-bio" ng-show="showBio">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4>{{playerInfo.Driver.givenName}}
+					<span class="label label-sm label-info">{{playerInfo.Driver.nationality}}</span>
+				</h4>
+			</div>
+			<div class="panel-body">
+				<p>Team: {{playerInfo.Constructors[0].name}}</p>
+				<p>Birth: {{playerInfo.Driver.dateOfBirth}}</p>
+			</div>
+			<div class="panel-footer">
+				<a class="btn btn-sm btn-warning" ng-click="toggleBio();">Back</a>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th >Championship 2014</th>
+						<th ></th>
+						<th ></th>
+						<th class="col-md-1" >
+							<form class="navbar-form" role="search">
+								<input class="form-control input-sm" type="text" ng-model="nameFilter" placeholder="Search..."/>
+							</form>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- class="table-active"-->
+					<tr ng-repeat="drv in driversList | filter: nameFilter">
+						<td>{{drv.Driver.givenName}}</td>
+						<td>{{drv.Driver.nationality}}</td>
+						<td>{{drv.Constructors[0].name}}</td>
+						<td>{{drv.points}}</td>
+						<!--<td><a class="btn btn-block btn-info show-bio" href="#/drv/{{drv.Driver.driverId}}">Show Bio</a></td>-->
+						<td>
+						
+							<a class="btn btn-block btn-info" ng-click="slideBioHandler(drv.Driver.driverId)">Show Bio</a>
+						</td>
+					</tr>
+				</tbody>
+				<!--<li ng-repeat="drv in driversList">Nationality: {{drv.Driver.nationality}}</li> -->	
+			</table>
+		</div>
+		
+		
+	</div>	
+</div>

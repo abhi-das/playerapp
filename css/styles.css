@@ -1,0 +1,67 @@
+.ts{
+	margin-top: 10px;
+}
+/**** Drv Bio Styles ****/
+.player-info{
+	overflow: hidden;
+}
+
+.drv-bio {
+  position:relative;
+  -webkit-transform: translate3d(0,0,0); /* Chrome, Safari, Opera */
+  transform: translate3d(0,0,0,);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  cursor: pointer;
+}
+
+.drv-bio.ng-hide-add,
+.drv-bio.ng-hide-remove {
+  display:block!important;
+}
+
+.drv-bio.ng-hide-remove.ng-hide-remove-active {
+  -webkit-animation:0.5s slide-up;
+  animation:0.5s slide-up;
+}
+
+.drv-bio.ng-hide-add.ng-hide-add-active {
+  -webkit-animation:0.5s slide-down;
+  animation:0.5s slide-down;
+}
+
+.drv-bio.ng-hide {
+  display:block!important;
+  margin-left: -30%;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-up
+{
+  0%   {margin-left:-30%;}
+  100%  {margin-left:0%;}
+}
+
+/* Standard syntax */
+@keyframes slide-up
+{
+  0%   {margin-left:-30%;}
+  100%  {margin-left:0%;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes slide-down
+{
+  0%  {margin-left:0%;}
+  100%   {margin-left:-30%;}
+}
+
+/* Standard syntax */
+@keyframes slide-down
+{
+  0%  {margin-left:0%;}
+  100%   {margin-left:-30%;}
+}
